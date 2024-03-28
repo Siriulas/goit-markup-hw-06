@@ -247,20 +247,18 @@ img {
 /* ===============features================ */
 
 .features-list {
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  gap: 24px;
+  display: block;
 }
 
 .features-item {
   align-items: flex-start;
   justify-content: flex-start;
-  width: calc((100% - 72px) / 4);
+  width: 100%;
+  margin-bottom: 72px;
 }
 
 .features-icon-box {
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   border: 1px solid #8e8f99;
@@ -275,15 +273,18 @@ img {
 }
 
 .features-subtitle {
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 1.2;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.11;
   letter-spacing: 0.02em;
+  text-transform: capitalize;
+  text-align: center;
   color: #2e2f42;
   margin-bottom: 8px;
 }
 
 .features-text {
+  font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
@@ -906,7 +907,8 @@ img {
 /* ================media================= */
 
 /* ================mobile================= */
-@media screen and (-webkit-min-device-pixel-ratio: 2),
+@media screen and (min-width: 320px),
+  (-webkit-min-device-pixel-ratio: 2),
   (min-resolution: 192dpi),
   (min-resolution: 2dppx) {
   .hero-page {
@@ -964,8 +966,8 @@ img {
     margin: 0 auto;
     margin-bottom: 36px;
   }
-
-  @media screen and (-webkit-min-device-pixel-ratio: 2),
+  @media screen and (min-width: 768px),
+    (-webkit-min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
     .hero-page {
@@ -975,6 +977,21 @@ img {
         ),
         url(../images/hero-bg-img-pad@2x.jpg);
     }
+  }
+  /* =================features==================== */
+  .features-list {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 72px 24px;
+  }
+  .features-item {
+    width: calc((100% - 24px) / 2);
+    margin-bottom: 0;
+  }
+  .features-subtitle {
+    text-align: start;
   }
 }
 
@@ -1019,7 +1036,8 @@ img {
   .hero-title {
     margin-bottom: 48px;
   }
-  @media screen and (-webkit-min-device-pixel-ratio: 2),
+  @media screen and (min-width: 1158px),
+    (-webkit-min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
     .hero-page {
@@ -1029,5 +1047,23 @@ img {
         ),
         url(../images/hero-bg-img@2x.jpg);
     }
+  }
+  /* =================features==================== */
+  .features-list {
+    flex-wrap: nowrap;
+  }
+  .features-item {
+    width: calc((100% - 72px) / 4);
+  }
+  .features-icon-box {
+    display: flex;
+  }
+  .features-subtitle {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+  }
+  .features-text {
+    font-weight: 400;
   }
 }
